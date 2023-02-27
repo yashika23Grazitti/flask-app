@@ -19,6 +19,7 @@ python3 src/app.py
 To use the web service, send HTTP requests to the appropriate endpoint using a tool such as cURL or Postman. The endpoints that are currently available are:
 
 **/health** - Health check of the service.
+
 **/api/products** - Returns a JSON array of all the products.
 
 ### Contributing
