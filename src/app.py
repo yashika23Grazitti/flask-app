@@ -12,6 +12,7 @@ from utils.kafka.runner import KafkaConsumerRunner
 from utils.kafka.processor1 import Topic1Processor
 from utils.kafka.processor2 import Topic2Processor
 from utils.kafka.processor3 import Topic3Processor
+kafka_enabled = False
 
 # topics = ['pubsub', 'pubsub1', 'pubsub2', 'pubsub3', 'pubsub4']
 
@@ -38,6 +39,7 @@ def init():
         # Initialize all the consumers
         logger.info("Initialize all the consumers.")
         kafka_bootstrap_servers = ['localhost:9093']
+        # kafka_bootstrap_servers = ['kafka:9092']
         kafka_group_id = "flask-group"
         kafka_consumer_factory = KafkaConsumerFactory(kafka_bootstrap_servers, kafka_group_id)
 
@@ -53,9 +55,12 @@ def init():
         consumer_thread.start()
         logger.info("Consumers were initialized successfully.")
 
-
-if __name__ == "__main__":
+if(kafka_enabled == True):
     init()
+# Main section will not be called in Gunicorn.
+# https://stackoverflow.com/questions/22260127/where-in-flask-gunicorn-to-initialize-application
+if __name__ == "__main__":
+    # init()
     app.run(port=8080, debug=True)
     # socketio = SocketIO(app)
     # socketio.run(app, debug=True)
