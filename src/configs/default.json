@@ -3,7 +3,7 @@
     "prop2": "default_value_2",
     "service": "flask-app",
     "kafka": {
-        "enabled": true,
+        "enabled": false,
         "thread_group": "consumers",
         "uri": [
             "localhost:9093"
