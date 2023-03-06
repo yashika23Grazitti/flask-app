@@ -1,0 +1,15 @@
+{
+    "prop2": "dev_value_2",
+    "kafka": {
+        "topics": {
+            "pubsub1": {
+                "partitions": 3
+            },
+            "pubsub4": {
+                "name": "pubsub4",
+                "partitions": 1,
+                "replication_factor": 1
+            }
+        }
+    }
+}

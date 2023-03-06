@@ -1,0 +1,29 @@
+{
+    "prop1": "default_value_1",
+    "prop2": "default_value_2",
+    "service": "flask-app",
+    "kafka": {
+        "enabled": true,
+        "thread_group": "consumers",
+        "uri": [
+            "localhost:9093"
+        ],
+        "topics": {
+            "pubsub1": {
+                "name": "pubsub1",
+                "partitions": 1,
+                "replication_factor": 1
+            },
+            "pubsub2": {
+                "name": "pubsub2",
+                "partitions": 1,
+                "replication_factor": 1
+            },
+            "pubsub3": {
+                "name": "pubsub3",
+                "partitions": 1,
+                "replication_factor": 1
+            }
+        }
+    }
+}
