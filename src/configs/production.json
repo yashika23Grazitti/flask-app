@@ -1,5 +1,5 @@
 {
-    "prop2": "dev_value_2",
+    "prop2": "prod_value_2",
     "kafka": {
         "topics": {
             "pubsub1": {
