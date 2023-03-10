@@ -23,7 +23,6 @@ class ConfigLoader:
         try:
             # Determine the environment
             environment = os.environ.get('ENV', env)
-            logger.error(("Env = {en} and environment = {envv}").format(en=env, envv = environment))
             # Load the default configuration file
             with open(f'{dir_path}/default.json', 'r') as f:
                 default_configs = json.load(f)

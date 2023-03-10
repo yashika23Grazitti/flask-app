@@ -1,5 +1,8 @@
 import logging, requests, sys
-logger = logging.getLogger("flask-app")
+from configs.config_loader import ConfigLoader
+
+config = ConfigLoader.get_config()
+logger = logging.getLogger(config.get("service"))
 
 def products_get_all():
     logger.info("Repository layer: Get all products.")

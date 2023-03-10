@@ -1,5 +1,8 @@
 import logging
-logger = logging.getLogger("flask-app")
+from configs.config_loader import ConfigLoader
+
+config = ConfigLoader.get_config()
+logger = logging.getLogger(config.get("service"))
 
 from repositories.products_repo import products_get_all
 

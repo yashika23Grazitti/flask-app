@@ -1,7 +1,11 @@
 import logging
 from flask import Blueprint
 from models.response import Response
-logger = logging.getLogger("flask-app")
+from configs.config_loader import ConfigLoader
+
+config = ConfigLoader.get_config()
+logger = logging.getLogger(config.get("service"))
+
 from services.products_service import get_all_products
 
 admin_blueprint = Blueprint("admin", __name__)
