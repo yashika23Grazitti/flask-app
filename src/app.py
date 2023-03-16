@@ -12,7 +12,8 @@ from utils.kafka.runner import KafkaConsumerRunner
 from utils.kafka.processor1 import Topic1Processor
 from utils.kafka.processor2 import Topic2Processor
 from utils.kafka.processor3 import Topic3Processor
-from configs.config_loader import ConfigLoader
+# from pyconman import ConfigLoader
+from pyconman import ConfigLoader
 
 # Load the configuration in the application scope.
 config = ConfigLoader.get_config()
@@ -27,8 +28,8 @@ logger = factory.initialize()
 # Register all the routes.
 app.register_blueprint(admin_blueprint, url_prefix='/api')
 
-# json_config =json.dumps(config)
-# print(f"Final config JSON = {json_config}")
+json_config =json.dumps(config)
+print(f"Final config JSON = {json_config}")
 
 @app.route('/health', methods=['GET'])
 def health():
@@ -68,6 +69,6 @@ if (config["kafka"]["enabled"] == True):
 # https://stackoverflow.com/questions/22260127/where-in-flask-gunicorn-to-initialize-application
 if __name__ == "__main__":
     # init()
-    app.run(port=8080, debug=True)
+    app.run(port=8081, debug=True)
     # socketio = SocketIO(app)
     # socketio.run(app, debug=True)

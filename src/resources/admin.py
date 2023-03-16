@@ -1,7 +1,7 @@
 import logging
 from flask import Blueprint
 from models.response import Response
-from configs.config_loader import ConfigLoader
+from pyconman import ConfigLoader
 
 config = ConfigLoader.get_config()
 logger = logging.getLogger(config.get("service"))
