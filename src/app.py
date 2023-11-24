@@ -29,7 +29,7 @@ print(f"Final config JSON = {json_config}")
 def health():
     # time.sleep(5)
     logger.debug("Flask app is running.")
-    resp = Response(True, "Flask app is running! through jenkins on port 5000", None)
+    resp = Response(True, "Flask app is running perfectly through jenkins on port 5000 :) ", None)
     return resp.to_dict()
 
 
